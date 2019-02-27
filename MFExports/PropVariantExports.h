@@ -1,0 +1,7 @@
+#pragma once
+
+#include "ExportsHelper.h"
+
+MFEXPORTS_API void PVInit(PROPVARIANT *pvar);
+MFEXPORTS_API HRESULT PVCopy(PROPVARIANT *pvarDest, PROPVARIANT *pvarSrc);
+MFEXPORTS_API HRESULT PVClear(PROPVARIANT *pvar);
