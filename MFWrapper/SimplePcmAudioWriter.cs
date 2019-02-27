@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MFWrapper
 {
-    public class SimpleAudioPcmWriter
+    public class SimplePcmAudioWriter
     {
         private readonly MFSinkWriter _sinkWriter;
         private uint _currentStreamIndex;
@@ -17,7 +17,7 @@ namespace MFWrapper
         public uint BitsPerSample { get; }
         public uint ChannelsCount { get; }
 
-        public SimpleAudioPcmWriter(string url, MFMediaType inputType)
+        public SimplePcmAudioWriter(string url, MFMediaType inputType)
         {
             MFAttributes attributes = new MFAttributes(1);
             attributes.SetUINT32(MFGuids.MF_SINK_WRITER_DISABLE_THROTTLING, 1);

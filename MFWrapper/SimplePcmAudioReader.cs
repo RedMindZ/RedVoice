@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MFWrapper
 {
-    public class SimpleAudioPcmReader
+    public class SimplePcmAudioReader
     {
         private readonly MFSourceReader _sourceReader;
         private uint _currentStreamIndex;
@@ -15,7 +15,7 @@ namespace MFWrapper
         public uint BitsPerSample { get; private set; }
         public uint ChannelsCount { get; private set; }
 
-        public SimpleAudioPcmReader(string url, MFAttributes attributes)
+        public SimplePcmAudioReader(string url, MFAttributes attributes)
         {
             _sourceReader = new MFSourceReader(url, attributes);
             SetActiveStream(MFGuids.MF_SOURCE_READER_FIRST_AUDIO_STREAM);

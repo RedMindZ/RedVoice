@@ -80,8 +80,8 @@
     <Compile Include="LowLevel\PropVariant.cs" />
     <Compile Include="LowLevel\Unknown.cs" />
     <Compile Include="LowLevel\WaveFormats.cs" />
-    <Compile Include="SimpleAudioPcmWriter.cs" />
-    <Compile Include="SimpleAudioPcmReader.cs" />
+    <Compile Include="SimplePcmAudioWriter.cs" />
+    <Compile Include="SimplePcmAudioReader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
