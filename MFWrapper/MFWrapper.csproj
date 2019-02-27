@@ -60,26 +60,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Blob.cs" />
-    <Compile Include="CoInit.cs" />
-    <Compile Include="MediaFoundation.cs" />
-    <Compile Include="MFAttributes.cs" />
-    <Compile Include="MFAttributesMatchType.cs" />
-    <Compile Include="MFAttributeType.cs" />
-    <Compile Include="MFGuids.cs" />
-    <Compile Include="MFMediaBuffer.cs" />
-    <Compile Include="MFMediaType.cs" />
-    <Compile Include="MFSample.cs" />
-    <Compile Include="MFSinkWriter.cs" />
-    <Compile Include="MFSinkWriterStatistics.cs" />
-    <Compile Include="MFSourceReader.cs" />
-    <Compile Include="MFSourceReaderControlFlag.cs" />
-    <Compile Include="MFSourceReaderFlag.cs" />
-    <Compile Include="MFStartup.cs" />
+    <Compile Include="LowLevel\Blob.cs" />
+    <Compile Include="LowLevel\CoInit.cs" />
+    <Compile Include="LowLevel\MediaFoundation.cs" />
+    <Compile Include="LowLevel\MFAttributes.cs" />
+    <Compile Include="LowLevel\MFAttributesMatchType.cs" />
+    <Compile Include="LowLevel\MFAttributeType.cs" />
+    <Compile Include="LowLevel\MFGuids.cs" />
+    <Compile Include="LowLevel\MFMediaBuffer.cs" />
+    <Compile Include="LowLevel\MFMediaType.cs" />
+    <Compile Include="LowLevel\MFSample.cs" />
+    <Compile Include="LowLevel\MFSinkWriter.cs" />
+    <Compile Include="LowLevel\MFSinkWriterStatistics.cs" />
+    <Compile Include="LowLevel\MFSourceReader.cs" />
+    <Compile Include="LowLevel\MFSourceReaderControlFlag.cs" />
+    <Compile Include="LowLevel\MFSourceReaderFlag.cs" />
+    <Compile Include="LowLevel\MFStartup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropVariant.cs" />
-    <Compile Include="Unknown.cs" />
-    <Compile Include="WaveFormats.cs" />
+    <Compile Include="LowLevel\PropVariant.cs" />
+    <Compile Include="LowLevel\Unknown.cs" />
+    <Compile Include="LowLevel\WaveFormats.cs" />
+    <Compile Include="SimpleAudioPcmWriter.cs" />
+    <Compile Include="SimpleAudioPcmReader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

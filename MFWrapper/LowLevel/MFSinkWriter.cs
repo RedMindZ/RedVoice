@@ -62,7 +62,7 @@ namespace MFWrapper
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterFlush(_instance, dwStreamIndex));
         }
 
-        public void Finalize()
+        public void FinalizeWriter()
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterFinalize(_instance));
         }
