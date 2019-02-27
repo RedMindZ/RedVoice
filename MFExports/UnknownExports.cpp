@@ -5,6 +5,7 @@
 
 HRESULT UnknownQueryInterface(IUnknown* pUnknown, REFIID riid, void **ppvObject)
 {
+	MF_SOURCE_READER_ALL_STREAMS;
 	return pUnknown->QueryInterface(riid, ppvObject);
 }
 

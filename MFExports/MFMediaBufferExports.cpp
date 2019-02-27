@@ -13,6 +13,13 @@ HRESULT CreateMediaBufferWrapper(IMFMediaBuffer *pBuffer, DWORD cbOffset, DWORD 
 	return MFCreateMediaBufferWrapper(pBuffer, cbOffset, dwLength, ppBuffer);
 }
 
+HRESULT CreateMemoryBuffer(DWORD cbMaxLength, IMFMediaBuffer **ppBuffer)
+{
+	return MFCreateMemoryBuffer(cbMaxLength, ppBuffer);
+}
+
+
+
 HRESULT MFMediaBufferLock(IMFMediaBuffer *pMediaBuffer, BYTE **ppbBuffer, DWORD *pcbMaxLength, DWORD *pcbCurrentLength)
 {
 	return pMediaBuffer->Lock(ppbBuffer, pcbMaxLength, pcbCurrentLength);

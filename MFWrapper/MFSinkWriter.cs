@@ -20,57 +20,59 @@ namespace MFWrapper
 
 
 
-        public void NativeMFSinkWriterAddStream(MFMediaType pTargetMediaType, out uint pdwStreamIndex)
+        public void AddStream(MFMediaType pTargetMediaType, out uint pdwStreamIndex)
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterAddStream(_instance, pTargetMediaType.NativePointer, out pdwStreamIndex));
         }
 
-        public void NativeMFSinkWriterSetInputMediaType(uint dwStreamIndex, MFMediaType pInputMediaType, MFAttributes pEncodingParameters)
+        public void SetInputMediaType(uint dwStreamIndex, MFMediaType pInputMediaType, MFAttributes pEncodingParameters)
         {
-            Marshal.ThrowExceptionForHR(NativeMFSinkWriterSetInputMediaType(_instance, dwStreamIndex, pInputMediaType.NativePointer, pEncodingParameters.NativePointer));
+            IntPtr encodingParametersPtr = pEncodingParameters != null ? pEncodingParameters.NativePointer : IntPtr.Zero;
+
+            Marshal.ThrowExceptionForHR(NativeMFSinkWriterSetInputMediaType(_instance, dwStreamIndex, pInputMediaType.NativePointer, encodingParametersPtr));
         }
 
-        public void NativeMFSinkWriterBeginWriting()
+        public void BeginWriting()
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterBeginWriting(_instance));
         }
 
-        public void NativeMFSinkWriterWriteSample(uint dwStreamIndex, MFSample pSample)
+        public void WriteSample(uint dwStreamIndex, MFSample pSample)
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterWriteSample(_instance, dwStreamIndex, pSample.NativePointer));
         }
 
-        public void NativeMFSinkWriterSendStreamTick(uint dwStreamIndex, long llTimestamp)
+        public void SendStreamTick(uint dwStreamIndex, long llTimestamp)
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterSendStreamTick(_instance, dwStreamIndex, llTimestamp));
         }
 
-        public void NativeMFSinkWriterPlaceMarker(uint dwStreamIndex, IntPtr pvContext)
+        public void PlaceMarker(uint dwStreamIndex, IntPtr pvContext)
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterPlaceMarker(_instance, dwStreamIndex, pvContext));
         }
 
-        public void NativeMFSinkWriterNotifyEndOfSegment(uint dwStreamIndex)
+        public void NotifyEndOfSegment(uint dwStreamIndex)
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterNotifyEndOfSegment(_instance, dwStreamIndex));
         }
 
-        public void NativeMFSinkWriterFlush(uint dwStreamIndex)
+        public void Flush(uint dwStreamIndex)
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterFlush(_instance, dwStreamIndex));
         }
 
-        public void NativeMFSinkWriterFinalize()
+        public void Finalize()
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterFinalize(_instance));
         }
 
-        public void NativeMFSinkWriterGetServiceForStream(uint dwStreamIndex, in Guid guidService, in Guid riid, out IntPtr ppvObject)
+        public void GetServiceForStream(uint dwStreamIndex, in Guid guidService, in Guid riid, out IntPtr ppvObject)
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterGetServiceForStream(_instance, dwStreamIndex, in guidService, in riid, out ppvObject));
         }
 
-        public void NativeMFSinkWriterGetStatistics(uint dwStreamIndex, out MFSinkWriterStatistics pStats)
+        public void GetStatistics(uint dwStreamIndex, out MFSinkWriterStatistics pStats)
         {
             Marshal.ThrowExceptionForHR(NativeMFSinkWriterGetStatistics(_instance, dwStreamIndex, out pStats));
         }

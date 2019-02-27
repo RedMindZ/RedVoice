@@ -359,7 +359,18 @@ namespace MFWrapper
 
         #endregion
 
+
+
         #region Constants
+
+        #region Source Reader
+        public static readonly uint MF_SOURCE_READER_INVALID_STREAM_INDEX = 0xffffffff;
+        public static readonly uint MF_SOURCE_READER_ALL_STREAMS = 0xfffffffe;
+        public static readonly uint MF_SOURCE_READER_ANY_STREAM = 0xfffffffe;
+        public static readonly uint MF_SOURCE_READER_FIRST_AUDIO_STREAM = 0xfffffffd;
+        public static readonly uint MF_SOURCE_READER_FIRST_VIDEO_STREAM = 0xfffffffc;
+        public static readonly uint MF_SOURCE_READER_MEDIASOURCE = 0xffffffff;
+        #endregion
 
         #endregion
     }

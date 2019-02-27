@@ -22,6 +22,11 @@ namespace MFWrapper
             Marshal.ThrowExceptionForHR(NativeCreateMediaBufferWrapper(other._instance, offset, length, out _instance));
         }
 
+        public MFMediaBuffer(uint cbMaxLength) : base(IntPtr.Zero, true)
+        {
+            Marshal.ThrowExceptionForHR(NativeCreateMemoryBuffer(cbMaxLength, out _instance));
+        }
+
 
 
         public void Lock(out IntPtr ppbBuffer, out uint pcbMaxLength, out uint pcbCurrentLength)
@@ -59,6 +64,10 @@ namespace MFWrapper
         [DllImport(MediaFoundation.EXPORTS_DLL, CallingConvention = CallingConvention.Cdecl, EntryPoint = "CreateMediaBufferWrapper")]
         //                                                       IMFMediaBuffer* DWORD          DWORD          IMFMediaBuffer**
         private static extern int NativeCreateMediaBufferWrapper(IntPtr pBuffer, uint cbOffset, uint dwLength, out IntPtr ppBuffer);
+
+        [DllImport(MediaFoundation.EXPORTS_DLL, CallingConvention = CallingConvention.Cdecl, EntryPoint = "CreateMemoryBuffer")]
+        //                                                 DWORD             IMFMediaBuffer**
+        private static extern int NativeCreateMemoryBuffer(uint cbMaxLength, out IntPtr ppBuffer);
 
 
 

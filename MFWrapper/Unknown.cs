@@ -31,8 +31,6 @@ namespace MFWrapper
         public uint Release() => NativeUnknownRelease(_instance);
 
         #region Cleanup
-        private bool _disposed = false;
-
         public void Dispose()
         {
             Dispose(true);
@@ -45,7 +43,7 @@ namespace MFWrapper
 
         protected virtual void Dispose(bool disposing)
         {
-            if (_disposed) return;
+            if (_instance == IntPtr.Zero) return;
 
             if (disposing)
             {
@@ -54,7 +52,7 @@ namespace MFWrapper
 
             Release();
 
-            _disposed = true;
+            _instance = IntPtr.Zero;
         }
 
         ~Unknown() => Dispose(false);
