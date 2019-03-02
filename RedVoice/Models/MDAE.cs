@@ -22,7 +22,7 @@ namespace RedVoice
     {
         private Variable _modelInput;
 
-        private Variable[] _encoderInputs;
+        private Function[] _encoderInputs;
         private Function[] _encoderReferences;
         private Function[] _decoders;
 
@@ -39,7 +39,7 @@ namespace RedVoice
             _modelInput = Variable.InputVariable(NDShape.CreateNDShape(new int[] { DecodersCount, NDShape.FreeDimension }), DataType.Float, "Abstract_ModelInput");
 
             // Encoder inputs
-            _encoderInputs = new Variable[DecodersCount];
+            _encoderInputs = new Function[DecodersCount];
             for (int i = 0; i < _encoderInputs.Length; i++)
             {
                 _encoderInputs[i] = CNTKLib.Slice(_modelInput, new AxisVector(new Axis[] { new Axis(0) }), new IntVector(new int[] { i }), new IntVector(new int[] { i + 1 }), "Abstract_EncoderInput_" + i);
@@ -80,7 +80,7 @@ namespace RedVoice
 
         public void Train()
         {
-
+            
         }
 
         public void Save(string directory) => _modelFunction.Save(Path.Combine(directory, GetType().Name + ".model"));
